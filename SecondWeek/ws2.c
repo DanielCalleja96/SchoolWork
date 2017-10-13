@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <limits.h>
+#include <time.h>
 
 struct Persons {
    int   person_id;
@@ -9,7 +10,7 @@ struct Persons {
 } Person;  
 
 int main (void) {
-	no_6();
+	no_9();
 	
 }
 
@@ -85,8 +86,51 @@ void no_5()
 
 void no_6()
 {
-	int sec, hours, minutes, number;
+	int seconds, hours, minutes, number, days;
 	printf("Enter number of seconds");
-	scanf("%d", &number);
+	scanf("%d", &seconds);
+	days = seconds / (60 * 60 * 24);
+	seconds -= days * (60 * 60 * 24);
+	hours = seconds / (60 * 60);
+	seconds -= hours * (60 * 60);
+	minutes = seconds / 60;	
+	printf("%d hours, %d minutes, %d days", hours, minutes, days);
+}	
+
+
+void no_7(int num1, int num2)
+{
+		printf("Enter  first number");
+		scanf("%d", &num1);
+		printf("Enter  second number");
+		scanf("%d", &num2);
+		
+		if(num1> num2)
+		{
+			printf("%d", num1);
+		} else if(num1<num2) {
+			 printf("%d", num2);
+		}else{
+			printf("numbers are equal");
+		}
+
 }
 
+
+void no_8(int num1, int num2){
+	printf("%d\n\n", (num1>num2? num1 : num2));
+}
+
+void no_9()
+{
+    // This program will create different sequence of 
+    // random numbers on every program run 
+ 
+    // Use current time as seed for random generator
+    srand(time(0));
+ 
+    for(int i = 0; i<=5; i++)
+        printf(" %d ", rand());
+ 
+    return 0;
+}

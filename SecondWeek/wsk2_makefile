@@ -1,0 +1,12 @@
+# CC represents the compiler the compiler to use
+CC=gcc
+# CFLAGS are the compiler options
+CFLAGS=-Wall -c
+
+all: ws2
+ws2: ws2.o
+	$(CC) ws2.o -o ws2
+ws2.o: ws2.c
+	$(CC) $(CFLAGS) ws2.c
+clean:
+	rm *.o new_ws2
